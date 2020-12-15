@@ -36,3 +36,21 @@ public:
 //    cout <<"hello cpp"<< endl;
 //    return 0;
 //}
+
+
+class Solution {
+public:
+    ListNode* reverseList(ListNode* head) {
+        if (!head || !head->next) return head;
+        ListNode* pre = nullptr;
+        ListNode* cur = head;
+        while (cur) {
+            ListNode* temp = cur->next;
+            cur->next = pre;
+            pre = cur;
+            cur = temp;
+        }
+        //return head;不能返回head，此时head已经是最后一位
+        return pre;
+    }
+};

@@ -15,9 +15,9 @@ class Solution {
 public:
     ListNode* mergeTwoLists(ListNode* l1, ListNode* l2) {
         //创建一个新结点
+        if (!l1 && !l2) return NULL;
         if (!l1) return l2;
         if (!l2) return l1;
-        if (!l1 && !l2) return NULL;
         ListNode* head = new ListNode(INT_MAX);
         ListNode* result = head;
         while (l1 && l2) {

@@ -40,6 +40,7 @@ public:
         char temp = board[i][j];
         board[i][j] = '\0';
         //对上下左右四个方向进行搜索（采用递归），随便一个方向找到即可
+        //也就是深度优先搜索
         if (dfs(board, word, i - 1, j, k + 1)
             || dfs(board, word, i + 1, j, k + 1)
             || dfs(board, word, i, j - 1, k + 1)

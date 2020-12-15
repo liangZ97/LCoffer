@@ -30,6 +30,7 @@ public:
     //尾插
     void push_back(int value) {
         que.push(value);
+        //比value进来早的数字也比value更先弹出，所以不用担心最大值是被扔掉的数字
         while (!deq.empty() && deq.back() < value) deq.pop_back();
         deq.push_back(value);
     }
